@@ -7,8 +7,8 @@ http.createServer(function (req, res) {
     res.write('<h2>Request url: '+ req.url+'</h2>');
     res.write('<h2>The date and time are currently: ' + myDateTime() + '</h2>');
     res.write('</body></html>');
-    console.log('page loaded!');
     res.end();
+    console.log('page loaded!');
 }).listen();
 
 myDateTime = function () {
