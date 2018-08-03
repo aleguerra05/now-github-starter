@@ -7,6 +7,18 @@ http.createServer(function (req, res) {
          req.socket.remoteAddress || 
          req.connection.socket.remoteAddress;
     
+    if (req.method == "GET") {
+     if (/favicon\.ico/.test(req.url)) {
+        fs.readFile("favicon.ico", function(err, data) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.setHeader("Content-Type","image/x-icon");
+                res.end(data);
+            }
+     });
+    }
+    
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write('<!DOCTYPE html><html><body>');
     res.write('<h1>Hello World!</h1>');
