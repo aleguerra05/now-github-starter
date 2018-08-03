@@ -6,11 +6,11 @@ http.createServer(function (req, res) {
     res.write('<h1>Hello World!</h1>');
     res.write('<h2>Request url: '+ req.url+'</h2>');
     res.write('<h2>The date and time are currently: ' + myDateTime() + '</h2>');
-    res.write('<h2>Your ip address: ' + request.connection.remoteAddress + '</h2>');
+    res.write('<h2>Your ip address: ' + req.connection.remoteAddress + '</h2>');
     res.write('</body></html>');
     res.end();
     console.log('page loaded! --- ' + req.url);
-    console.log('from         --- ' + request.connection.remoteAddress);
+    console.log('from         --- ' + req.connection.remoteAddress);
     
 }).listen();
 
