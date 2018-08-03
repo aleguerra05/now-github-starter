@@ -16,7 +16,8 @@ http.createServer(function (req, res) {
                 res.setHeader("Content-Type","image/x-icon");
                 res.end(data);
             }
-     });
+        });
+      }
     }
     
     res.writeHead(200, {'Content-Type': 'text/html'});
