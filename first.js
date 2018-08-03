@@ -15,8 +15,8 @@ http.createServer(function (req, res) {
     res.write('<h2>Your ip address: ' + ip + '</h2>');
     res.write('</body></html>');
     res.end();
-    console.log('page loaded!  --- ' + req.url);
-    console.log('from          --- ' + ip);
+    console.log('page loaded! --- ' + req.url);
+    console.log('from         --- ' + ip);
     
 }).listen();
 
