@@ -19,7 +19,18 @@ http.createServer(function (req, res) {
             }
         });
       }
-    else{
+      else if(/rest/.test(req.url)){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        
+        var CUB00001 = {title:"Welcome 1",details:"This is the grettings message 1", dateTime:Date()};
+        var CUB00002 = {title:"Welcome 2",details:"This is the grettings message 2", dateTime:Date()};
+        var CUB00003 = {title:"Welcome 3",details:"This is the grettings message 3", dateTime:Date()};
+        
+        res.write(JSON.stringify({CUB00001,CUB00002,CUB00003}));
+        res.end();
+      }
+      else{
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write('<!DOCTYPE html><html><body>');
         res.write('<h1>Hello World!</h1>');
