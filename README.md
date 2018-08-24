@@ -1,4 +1,4 @@
-# now-github-starter CUB img
+# now-github-starter CUB img1
 
 This is a simple project that makes a [static deployment](https://zeit.co/docs/deployment-types/static)
 to Now.
