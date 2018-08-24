@@ -19,15 +19,14 @@ http.createServer(function (req, res) {
             }
         });
       }
-      else if(/rest/.test(req.url)){
+      else if(/rest1/.test(req.url)){
+
+        var CUB0001 = {title:"Welcome 1",details:"This is the grettings message 1", dateTime:Date(), image:base64_encode("image.jpg")};
+
+        
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        
-        var CUB00001 = {title:"Welcome 1",details:"This is the grettings message 1", dateTime:Date()};
-        var CUB00002 = {title:"Welcome 2",details:"This is the grettings message 2", dateTime:Date()};
-        var CUB00003 = {title:"Welcome 3",details:"This is the grettings message 3", dateTime:Date()};
-        
-        res.write(JSON.stringify({CUB00001,CUB00002,CUB00003}));
+        res.write(JSON.stringify({CUB0001}));
         res.end();
       }
       else{
@@ -43,7 +42,14 @@ http.createServer(function (req, res) {
     console.log('page loaded! --- ' + req.url);
     console.log('from         --- ' + ip);
     
-}).listen();
+}).listen(function (){console.log('Server Started...')});
+
+function base64_encode(file) {
+    // read binary data
+    var bitmap = fs.readFileSync(file);
+    // convert binary data to base64 encoded string
+    return new Buffer(bitmap).toString('base64');
+}
 
 myDateTime = function () {
     return Date();
